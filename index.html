@@ -414,7 +414,64 @@
   }
   footer span { color: var(--pink); }
 
-  /* SCROLL ANIMATION */
+  /* CERTIFICAÇÕES */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .cert-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 1.8rem;
+    border: 1.5px solid #ece9e2;
+    display: flex; gap: 1.2rem; align-items: flex-start;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .cert-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+  .cert-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 3px; height: 100%;
+  }
+  .cert-card.bradesco::before { background: linear-gradient(180deg, var(--pink), var(--yellow)); }
+  .cert-icon {
+    width: 48px; height: 48px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; flex-shrink: 0;
+  }
+  .cert-icon.bradesco-icon { background: linear-gradient(135deg, #cc0000, #ff4444); }
+  .cert-info { flex: 1; }
+  .cert-institution {
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: var(--pink); margin-bottom: 0.3rem;
+  }
+  .cert-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    line-height: 1.3; margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+  .cert-meta {
+    display: flex; gap: 0.8rem; flex-wrap: wrap;
+    align-items: center;
+  }
+  .cert-hours {
+    font-size: 0.75rem; color: var(--text-muted);
+    display: flex; align-items: center; gap: 4px;
+  }
+  .cert-date {
+    font-size: 0.75rem; color: var(--text-muted);
+  }
+  .cert-badge {
+    display: inline-block;
+    padding: 3px 10px; border-radius: 100px;
+    font-size: 0.7rem; font-weight: 600;
+    background: rgba(46,207,176,0.15); color: #1a9e87;
+    margin-top: 0.6rem;
+  }
   .reveal {
     opacity: 0; transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -440,6 +497,7 @@
     <li><a href="#formacao">Formação</a></li>
     <li><a href="#habilidades">Habilidades</a></li>
     <li><a href="#projetos">Projetos</a></li>
+    <li><a href="#certificacoes">Certificações</a></li>
     <li><a href="#contato">Contato</a></li>
   </ul>
 </nav>
@@ -523,13 +581,7 @@
       <div class="timeline-sub">Técnico em Informática Integrado ao Ensino Médio</div>
       <span class="timeline-badge" style="background:rgba(46,207,176,0.15); color:#1a9e87;">Concluído</span>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-dot" style="background:var(--yellow); box-shadow: 0 0 0 3px rgba(245,200,66,0.2);"></div>
-      <div class="timeline-period">2025</div>
-      <div class="timeline-title">Fundamentos das Plataformas de Sensoriamento Inteligente para Indústria</div>
-      <div class="timeline-sub">Certificação — Virtus</div>
-      <span class="timeline-badge" style="background:rgba(245,200,66,0.2); color:#8a6f00;">Certificação</span>
-    </div>
+
   </div>
 </section>
 
@@ -604,16 +656,17 @@
       </div>
     </div>
     <div class="project-card">
-      <div class="project-thumb thumb-teal">🚧</div>
+      <div class="project-thumb thumb-teal">🗂️</div>
       <div class="project-body">
-        <h3>Em breve...</h3>
-        <p>Novos projetos estão sendo desenvolvidos. Acompanhe meu GitHub para as novidades!</p>
+        <h3>PYSQL — Cadastro de Clientes</h3>
+        <p>Aplicação desktop para gerenciamento de clientes com interface gráfica Tkinter e persistência em SQLite. Suporta adicionar, pesquisar, atualizar e deletar registros.</p>
         <div class="project-footer">
           <div class="project-tags">
             <span class="tag tag-yellow" style="font-size:0.72rem; padding:3px 10px;">Python</span>
-            <span class="tag tag-purple" style="font-size:0.72rem; padding:3px 10px;">MySQL</span>
+            <span class="tag tag-teal" style="font-size:0.72rem; padding:3px 10px;">SQLite</span>
+            <span class="tag tag-purple" style="font-size:0.72rem; padding:3px 10px;">Tkinter</span>
           </div>
-          <span class="coming-soon">em andamento</span>
+          <a href="https://github.com/DudaVargz/cadastro-clientes" target="_blank" class="project-link">Ver no GitHub →</a>
         </div>
       </div>
     </div>
@@ -631,6 +684,64 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- CERTIFICAÇÕES -->
+<section id="certificacoes" style="background: var(--bg2);">
+  <div class="section-label">Certificações</div>
+  <h2>Cursos concluídos</h2>
+  <div class="cert-grid reveal">
+
+    <div class="cert-card bradesco">
+      <div class="cert-icon bradesco-icon">🎓</div>
+      <div class="cert-info">
+        <div class="cert-institution">Fundação Bradesco — Escola Virtual</div>
+        <div class="cert-title">Crie um Site Simples usando HTML, CSS e JavaScript</div>
+        <div class="cert-meta">
+          <span class="cert-hours">⏱ 2 horas</span>
+          <span class="cert-date">📅 Maio 2026</span>
+        </div>
+        <span class="cert-badge">✓ Concluído</span>
+      </div>
+    </div>
+
+    <div class="cert-card bradesco">
+      <div class="cert-icon bradesco-icon">🐍</div>
+      <div class="cert-info">
+        <div class="cert-institution">Fundação Bradesco — Escola Virtual</div>
+        <div class="cert-title">Desenvolvendo um Projeto Completo Python com Estruturas de Dados</div>
+        <div class="cert-meta">
+          <span class="cert-hours">⏱ 10 horas</span>
+          <span class="cert-date">📅 Maio 2026</span>
+        </div>
+        <span class="cert-badge">✓ Concluído</span>
+      </div>
+    </div>
+
+    <div class="cert-card" style="border-color: #ece9e2;">
+      <div class="cert-icon" style="background: rgba(245,200,66,0.2);">🏭</div>
+      <div class="cert-info">
+        <div class="cert-institution" style="color: #8a6f00;">Virtus</div>
+        <div class="cert-title">Fundamentos das Plataformas de Sensoriamento Inteligente para Indústria</div>
+        <div class="cert-meta">
+          <span class="cert-date">📅 2025</span>
+        </div>
+        <span class="cert-badge">✓ Concluído</span>
+      </div>
+    </div>
+
+    <div class="cert-card bradesco" style="opacity:0.5; border-style: dashed;">
+      <div class="cert-icon" style="background: var(--bg2); font-size:1.2rem;">＋</div>
+      <div class="cert-info">
+        <div class="cert-institution" style="color: var(--text-muted);">Em breve</div>
+        <div class="cert-title" style="color: var(--text-muted);">Novas certificações a caminho...</div>
+        <div class="cert-meta">
+          <span class="cert-hours" style="font-style:italic;">Sempre aprendendo 🚀</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
