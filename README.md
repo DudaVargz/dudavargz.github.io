@@ -2,7 +2,7 @@
 
 Site de portfólio pessoal desenvolvido com HTML e CSS puro, apresentando minha trajetória acadêmica, habilidades e projetos na área de TI.
 
-🔗 **Acesse:** [dudavargz.github.io/portfolio](https://dudavargz.github.io)
+🔗 **Acesse:** [dudavargz.github.io/portfolio](https://DudaVargz.github.io)
 
 ---
 
